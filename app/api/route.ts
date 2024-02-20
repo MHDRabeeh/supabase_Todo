@@ -4,6 +4,8 @@ import { NextResponse } from "next/server";
 const prisma = new PrismaClient();
 //read
 export async function GET(request: Request, response: Response) {
+    // console.log("get is working");
+    
   const profile = await prisma.profile.findMany();
   return new Response(JSON.stringify(profile));
 }

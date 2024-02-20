@@ -21,7 +21,9 @@ export default function Home() {
   const [count, setCount] = useState<number>(1);
   const [update, setUpdate] = useState<Update>({ id: "" });
   const [tempValue, setTempValue] = useState<string>(""); // Track user input temporarily
-  const baseURL = "https://supabase-todo-alpha-kohl.vercel.app/";
+  const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
+  // console.log(process.env.NEXT_PUBLIC_BASE_URL);
+  
 
   useEffect(() => {
     async function getdata() {
